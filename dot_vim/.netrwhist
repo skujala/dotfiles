@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/samikujala/Documents/Work/Fysiikka II 2010-/Luennot/2010'
+let g:netrw_dirhist_2='/Users/samikujala/Documents/Work/Fysiikka II 2010-/Luennot'
+let g:netrw_dirhist_3='/Users/samikujala/Documents/Teaching/S-104.1320 Fysiikan lisakurssi II (SFT)/2011/Laskarit'
+let g:netrw_dirhist_4='/Users/samikujala/.vim'

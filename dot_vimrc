@@ -1,0 +1,60 @@
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" Append modeline after last line in buffer.
+" Use substitute() (not printf()) to handle '%%s' modeline in LaTeX files.
+function! AppendModeline()
+  let save_cursor = getpos('.')
+  let append = ' vim: set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.': '
+  $put =substitute(&commentstring, '%s', append, '')
+  call setpos('.', save_cursor)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+set shiftwidth=4
+set backspace=indent,eol,start
+set tabstop=4
+set expandtab
+set autoindent
+
+" use Bourne shell for speed:
+set shell=/bin/sh
+"
+" reformat paragraph with no arguments:
+map ** {!}par}
+"
+" reformat paragraph with arguments:
+map *^V  {!}par
+
+
+if has('gui_running')
+    " i like about 80 character width lines
+
+  set textwidth=78
+  "  2 for the command line
+  set lines=52
+  " add columns for the Project plugin
+
+  set columns=110
+  " enable use of mouse
+  set mouse=a
+  set fuoptions=maxvert
+  set guifont=Envy\ Code\ R:h13
+  set guioptions-=L
+endif
+
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+
+set list
+
+set joinspaces
+
+
