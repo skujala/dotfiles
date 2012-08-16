@@ -13,7 +13,7 @@ Installation
 
 ``` bash
 mkdir ${SOMEDIRECTORY}
-git clone git://github.com/michaeljsmalley/dotfiles ${SOMEDIRECTORY}
+git clone git://github.com/skujala/dotfiles ${SOMEDIRECTORY}
 cd ${SOMEDIRECTORY}
 ./install.sh
 ```
